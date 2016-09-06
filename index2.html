@@ -1,0 +1,51 @@
+<html> 
+<head> 
+<script> 
+
+var count= 1;
+function photo()
+{	
+	
+	if(count==1)
+	{
+	var img = document.getElementById("image");
+	img.src="2.jpg";
+	count++;
+	return false;
+	}
+
+	else if(count==2)
+	{
+	var img = document.getElementById("image");
+	img.src="3.jpg";
+	count++;
+	return false;
+	}
+	
+	else if(count==3)
+	{
+	var img = document.getElementById("image");
+	img.src="4.jpg";
+	count++;
+	return false;
+	}
+		
+	else if(count==4)
+	{
+	var img = document.getElementById("image");
+	img.src="1.jpg";
+	count=1;
+	return false;
+	}
+
+}
+
+</script>
+
+</head>
+<body>
+<img id="image" src="1.jpg" height="300px" width= "400px" border="5" />
+<br><br><br>
+<button id="click" onclick="photo();">CLICK</button>
+</body>
+</html>

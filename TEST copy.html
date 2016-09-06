@@ -1,0 +1,33 @@
+<html>
+<head>
+</head>
+<body>
+
+<img id="sad.jpg"/>
+<input type="button" onclick="changePic(1)" value="one"/>
+
+
+<script>
+
+function changePic(int n){
+switch (n)
+{
+case 1:
+image="angry.jpg"
+break;
+case 2:
+image="happy.png"
+break;
+case 3:
+image="sad.jpg"
+break;
+case 4:
+image="tired.png"
+break;
+		
+	}
+document.getElementById("emotion").src=image;
+}
+</script>
+</body>
+</html>

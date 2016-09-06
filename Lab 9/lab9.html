@@ -1,0 +1,182 @@
+<html> 
+<head> 
+<center>
+<script> 
+
+function start()
+{
+	setTimeout(function(){ alert("Hello, Welcome to Virtual Pet. The goal is to keep your pet at its happy state. As shown on the screen. Over using an action can result in harming your pet!"); }, 500);
+	setTimeout(state, 2000);
+	setInterval(checkState, 25000);
+	
+}
+function checkState()
+{
+	if ((x <= 1) && (y <= 1 && z <= 1)) 
+	{
+		setTimeout(function(){ alert("You have neglected your pet!"); }, 500);
+		var img = document.getElementById("image");
+		img.src="4.jpg";
+		setTimeout(function(){ alert("Your pet has died, please reset to try again:"); }, 500);
+
+	}
+	else if((x >= 4) && (y >= 4 && z >= 3)) 
+	{
+		reset();
+	}
+		
+}
+
+function state()
+{
+	w= Math.floor((Math.random() * 3) + 1)
+	
+		if(w==1)
+		{
+		feed();
+		clearTimeout(state);
+		}
+		else if(w==2)
+		{
+		pet();
+		clearTimeout(state);
+		}
+		else if(w==3)
+		{
+		punish();
+		clearTimeout(state);
+		}
+		
+		
+}
+function reset()
+{
+	x=0;
+	y=0;
+	z=0;
+	
+	var img = document.getElementById("image");
+	img.src="1.jpg";
+	
+	start();
+	
+}
+
+var x=0;
+function feed()
+{
+	
+	if(x==0)
+	{
+	var img = document.getElementById("image");
+	img.src="2.jpg";
+	}
+	else if(x==2)
+	{
+	var img = document.getElementById("image");
+	img.src="6.jpg";
+	}
+	else if(x==4)
+	{	
+	var img = document.getElementById("image");
+	img.src="1.jpg";
+	setTimeout(state, 5000);
+	}
+	else if(x==5)
+	{
+	var img = document.getElementById("image");
+	img.src="3.jpg";
+	setTimeout(state,5000);
+	}
+	else if(x>6)
+	{
+	setTimeout(function(){ alert("You feed your pet too much!"); }, 500);
+	var img = document.getElementById("image");
+	img.src="4.jpg";
+	setTimeout(function(){ alert("Your pet has died, please reset to try again:"); }, 500);
+	}
+
+	x++;
+}
+var y=0;
+function pet()
+{
+	if(y==0)
+	{
+	var img = document.getElementById("image");
+	img.src="7.jpg";
+	}
+	if(y==3)
+	{
+	var img = document.getElementById("image");
+	img.src="3.jpg";
+	}
+
+	else if(y==4)
+	{
+	var img = document.getElementById("image");
+	img.src="1.jpg";
+	setTimeout(state,5000);
+	}
+	else if(y>5)
+	{
+	var img = document.getElementById("image");
+	img.src="4.jpg";
+	setTimeout(function(){ alert("You have pet your pet too much!"); }, 500);
+	setTimeout(function(){ alert("Your pet has died, please reset to try again:"); }, 500);
+	}
+	y++;
+}
+
+var z=0;
+function punish()
+{
+	if(z==0)
+	{
+		var img = document.getElementById("image");
+		img.src="8.jpg";
+	}	
+	else if(z==1)
+	{
+	var img = document.getElementById("image");
+	img.src="5.jpg";
+	}
+	else if(z==3)
+	{
+	var img = document.getElementById("image");
+	img.src="1.jpg";
+	setTimeout(state, 5000);
+	}
+	else if(z>3)
+	{
+	setTimeout(function(){ alert("You punished your pet too much!"); }, 500);
+	var img = document.getElementById("image");
+	img.src="4.jpg";
+	setTimeout(function(){ alert("Your pet has died, please reset to try again:"); }, 500);
+	}
+	z++;
+		
+}
+	
+
+</script>
+
+</head>
+<body>
+
+<script>
+start();
+</script>
+<body style="background-color:lightgrey;">
+<img id="image" src="1.jpg" height="300px" width= "400px" border="5" />
+<br><br><br>
+<button id="click" onclick="feed()"><b>FEED</b></button>
+<button id="click" onclick="pet();"><b>PET</b></button>
+<button id="click" onclick="punish();"><b>PUNISH</b></button>
+<br><br>
+<button id="click" onclick="x=0; y=0; z=0; reset()"><b>RESET</b></button>
+<br><br><br>
+<li>Link to <a HREF="http://www.pages.drexel.edu/~jam699/cs164/instructions.html">Instructions for Virtual Pet<br /></a></li>
+</center>
+</body>
+</html>
